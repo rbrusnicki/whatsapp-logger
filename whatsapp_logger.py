@@ -293,10 +293,16 @@ if __name__ == "__main__":
     print("WhatsApp Message Logger (Background Mode)")
     print("---------------------------------------")
     print("Make sure Google Chrome is installed and up to date.")
-    #contact_name = input("Enter the contact name to monitor: ")
-    contact_name = "GaAng"
+    # You can either use input to enter the contact name each time:
+    # contact_name = input("Enter the contact name to monitor: ")
+    
+    # Or hardcode the contact name here (must match exactly as shown in WhatsApp):
+    contact_name = "Example Contact"  # Replace with the exact name of the contact you want to monitor
+    
+    print(f"\nMonitoring messages from: {contact_name}")
+    print("Note: The contact name must match exactly as it appears in WhatsApp (including emojis if any)")
     logger = WhatsAppLogger(contact_name)
-    logger.start_logging() 
+    logger.start_logging()
 
 # The setup is now complete! Here's what we've done:
 # Created start_whatsapp_logger.bat - A batch file that runs the Python script

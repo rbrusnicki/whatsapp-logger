@@ -33,7 +33,21 @@ cd whatsapp-logger
 pip install -r requirements.txt
 ```
 
-3. Set up WhatsApp Web (First Time Only):
+3. Set the contact name to monitor:
+   - Open `whatsapp_logger.py` in a text editor
+   - Find this section:
+     ```python
+     # You can either use input to enter the contact name each time:
+     # contact_name = input("Enter the contact name to monitor: ")
+     
+     # Or hardcode the contact name here (must match exactly as shown in WhatsApp):
+     contact_name = "Example Contact"  # Replace with the exact name of the contact you want to monitor
+     ```
+   - Replace "Example Contact" with the exact name of the contact you want to monitor
+   - The name must match exactly as it appears in WhatsApp (including emojis if any)
+   - Save the file
+
+4. Set up WhatsApp Web (First Time Only):
    - Comment out this line in `whatsapp_logger.py`:
      ```python
      chrome_options.add_argument("--headless=new")
@@ -46,7 +60,7 @@ pip install -r requirements.txt
    - After successful login, close the script (Ctrl+C)
    - Uncomment the headless mode line you commented earlier
 
-4. Set up auto-start with Windows:
+5. Set up auto-start with Windows:
    - Press `Windows + R`
    - Type `shell:startup` and press Enter
    - Create a shortcut to `run_hidden.vbs` in this folder
@@ -130,6 +144,11 @@ To prevent auto-start:
 3. If you get path errors:
    - Update the paths in both `run_hidden.vbs` and `start_whatsapp_logger.bat`
    - Make sure all files are in the correct directory
+
+4. If contact's messages aren't being logged:
+   - Verify the contact name matches exactly as shown in WhatsApp
+   - Check for any special characters or emojis in the contact name
+   - Try using the input method first to test the exact name
 
 ## Security Note
 
